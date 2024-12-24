@@ -4,26 +4,24 @@ import time
 class maze:
     def __init__(self) -> None:
         self.maze = [
-                    ["X", "X", "X", "X", "X", "X", "X","X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", " "," ", "X", " ", " ", " ", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"," ", "X", " ", "X", " ", "X", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"," ", "X", " ", "X", " ", "X", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"," ", "X", " ", "X", " ", "X", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"," ", "X", " ", "X", " ", "X", "X"],
-                    ["X", " ", "X", " ", "X", " ", "X"," ", "X", " ", "X", " ", "X", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X"," ", " ", " ", "X", " ", " ", "X"],
-                    ["X", " ", "X", "X", "X", "X", "X","X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", "X"],
-                    ["X", "X", "X", "X", "X", "X", "X","X", "X", "X", "X", "X", " ", "X"],
-                    ["X", " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", "X"],
-                    ["X", "X", "X", "X", "X", "X", "X","X", "X", "X", "X", "X", "X", "X"],
-
+                    ["X", "X", "X", "X", "X", "X", "X", "X"],
+                    ["X", " ", " ", " ", " ", "X", "X", "X"],
+                    ["X", " ", "X", "X", " ", "X", " ", " "],
+                    ["X", " ", "X", "X", " ", " ", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X", "X"],
+                    ["X", "X", "X", " ", "X", " ", "X", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X", "X"],
+                    ["X", " ", "X", "X", "X", " ", "X", "X"],
+                    ["X", " ", "X", "X", "X", " ", "X", "X"],
+                    ["X", "X", "X", "X", "X", "X", "X", "X"],
                     ]
-        self.ply = pos(11, 0)
-        self.end = pos(1, 13)
+        self.ply = pos(11, 1)
+        self.end = pos(2, 7)
         self.maze[self.ply.y][self.ply.x] = "R"
         self.maze[self.end.y][self.end.x] = "E"
-    
+
     def isInBound(self, y, x):
         if y>=0 and x>=0 and y<len(self.maze) and x<len(self.maze[0]):
             return True
@@ -45,12 +43,6 @@ class maze:
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
         #keyboard.wait("")
-
-    def printNext(self):
-        os.system("cls")
-        print("\n\n\n")
-        print(">>>>> Next Level <<<<<")
-        print("\n\n\n")
 
     def find_path(self):
         from Queue import Queue  
@@ -133,7 +125,6 @@ class maze:
                 self.printEND()
                 return False
         return True
-
 class pos:
     def __init__(self) -> None:
         self.y = None
