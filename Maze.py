@@ -1,20 +1,26 @@
 import os
 import time
-import keyboard
+
 
 class maze:
     def __init__(self) -> None:
         self.maze = [
                     ["X", "X", "X", "X", "X", "X", "X"],
-                    ["X", " ", " ", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", "X", " ", " "],
                     ["X", " ", "X", " ", "X", " ", "X"],
-                    ["X", " ", "X", " ", " ", " ", "X"],
-                    ["X", " ", "X", "X", "X", "X", "X"],
+                    ["X", " ", "X", " ", " ", " ", " "],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", " ", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", " ", "X", " ", "X", " ", "X"],
+                    ["X", "x", "X", "X", "X", "X", "X"],
                     ]
-        self.ply = pos(5, 1)
+        self.ply = pos(11, 1)
         self.end = pos(2, 6)
-        self.maze[self.ply.y][self.ply.x] = "P"
+        self.maze[self.ply.y][self.ply.x] = "R"
         self.maze[self.end.y][self.end.x] = "E"
     
     def isInBound(self, y, x):
@@ -37,58 +43,88 @@ class maze:
         print("\n\n\n")
         print(">>>>> Congraturation!!! <<<<<")
         print("\n\n\n")
-        keyboard.wait("")
+        #keyboard.wait("")
+
+    def find_path(self):
+        from Queue import Queue  
+
+        queue = Queue()
+        queue.enqueue((self.ply, []))  
+
+        visited = set()  
+        visited.add((self.ply.y, self.ply.x))
+
+        while not queue.isEmpty():
+            current_pos, path = queue.dequeue()
+
+        
+            if self.maze[current_pos.y][current_pos.x] == "E":
+                return path
+
+        
+            directions = [("up", -1, 0), ("down", 1, 0), ("left", 0, -1), ("right", 0, 1)]
+
+            for direction, dy, dx in directions:
+                next_y, next_x = current_pos.y + dy, current_pos.x + dx
+
+                if self.isInBound(next_y, next_x) and (next_y, next_x) not in visited:
+                    if self.maze[next_y][next_x] in [" ", "E"]:
+                        queue.enqueue((pos(next_y, next_x), path + [direction]))
+                        visited.add((next_y, next_x))
+
+        return []  
+
 
     def move_up(self):
-        next_move = pos(self.ply.y-1, self.ply.x)
-        if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == " ":
-                self.maze[self.ply.y][self.ply.x] = " "
-                self.maze[next_move.y][next_move.x] = "P"
-                self.ply = next_move
-                time.sleep(0.25)
+        next_move = pos(self.ply.y - 1, self.ply.x)
+        if self.isInBound(next_move.y, next_move.x):
             if self.maze[next_move.y][next_move.x] == "E":
                 self.printEND()
                 return False
+            if self.maze[next_move.y][next_move.x] == " ":
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.maze[next_move.y][next_move.x] = "R"
+                self.ply = next_move
+                time.sleep(0.25)
         return True
-    
+        
     def move_down(self):
-        next_move = pos(self.ply.y+1, self.ply.x)
-        if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == " ":
-                self.maze[self.ply.y][self.ply.x] = " "
-                self.maze[next_move.y][next_move.x] = "P"
-                self.ply = next_move
-                time.sleep(0.25)
+        next_move = pos(self.ply.y + 1, self.ply.x)
+        if self.isInBound(next_move.y, next_move.x):
             if self.maze[next_move.y][next_move.x] == "E":
                 self.printEND()
                 return False
+            if self.maze[next_move.y][next_move.x] == " ":
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.maze[next_move.y][next_move.x] = "R"
+                self.ply = next_move
+                time.sleep(0.25)
         return True
 
     def move_left(self):
-        next_move = pos(self.ply.y, self.ply.x-1)
-        if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == " ":
-                self.maze[self.ply.y][self.ply.x] = " "
-                self.maze[next_move.y][next_move.x] = "P"
-                self.ply = next_move
-                time.sleep(0.25)
+        next_move = pos(self.ply.y, self.ply.x - 1)
+        if self.isInBound(next_move.y, next_move.x):
             if self.maze[next_move.y][next_move.x] == "E":
                 self.printEND()
                 return False
+            if self.maze[next_move.y][next_move.x] == " ":
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.maze[next_move.y][next_move.x] = "R"
+                self.ply = next_move
+                time.sleep(0.25)
         return True
 
     def move_right(self):
-        next_move = pos(self.ply.y, self.ply.x+1)
-        if self.isInBound(next_move.y,next_move.x):
-            if self.maze[next_move.y][next_move.x] == " ":
-                self.maze[self.ply.y][self.ply.x] = " "
-                self.maze[next_move.y][next_move.x] = "P"
-                self.ply = next_move
-                time.sleep(0.25)
+        next_move = pos(self.ply.y, self.ply.x + 1)
+        if self.isInBound(next_move.y, next_move.x):
             if self.maze[next_move.y][next_move.x] == "E":
                 self.printEND()
                 return False
+            if self.maze[next_move.y][next_move.x] == " ":
+                self.maze[self.ply.y][self.ply.x] = " "
+                self.maze[next_move.y][next_move.x] = "R"
+                self.ply = next_move
+                time.sleep(0.25)
         return True
 
 class pos:
@@ -105,27 +141,47 @@ if __name__ == '__main__':
     m = maze()
     m.print()
 
-    while True:
-        if keyboard.is_pressed("q"):
-            print("Quit Program")
-            break
-        if keyboard.is_pressed("w"):
-            if m.move_up():
-                m.print()
-            else:
+    path = m.find_path()
+
+    # ให้ผู้เล่นเดินตามเส้นทาง
+    for step in path:
+        if step == "up":
+            if not m.move_up():  # หากเจอ E ฟังก์ชันคืน False
                 break
-        if keyboard.is_pressed("s"):
-            if m.move_down():
-                m.print()
-            else:
+        elif step == "down":
+            if not m.move_down():
                 break
-        if keyboard.is_pressed("a"):
-            if m.move_left():
-                m.print()
-            else:
+        elif step == "left":
+            if not m.move_left():
                 break
-        if keyboard.is_pressed("d"):
-            if m.move_right():
-                m.print()
-            else:
+        elif step == "right":
+            if not m.move_right():
                 break
+
+        m.print()  # แสดงผลเขาวงกต
+        time.sleep(0.25)  # หน่วงเวลาเล็กน้อย
+
+#    while True:
+#        if keyboard.is_pressed("q"):
+#            print("Quit Program")
+#            break
+#        if keyboard.is_pressed("w"):
+#            if m.move_up():
+#                m.print()
+#            else:
+#                break
+#        if keyboard.is_pressed("s"):
+#            if m.move_down():
+#                m.print()
+#            else:
+#                break
+#        if keyboard.is_pressed("a"):
+#            if m.move_left():
+#                m.print()
+#            else:
+#                break
+#        if keyboard.is_pressed("d"):
+#            if m.move_right():
+#                m.print()
+#            else:
+#                break
