@@ -1,6 +1,11 @@
 import os
 import time
 import MazeMechHard as MMH
+import MazeKhingEZ as MKE
+import MazeKhingHard as MKH
+import MazePunEZ as MPE
+import MazePunHard as MPH
+
 
 class maze:
     def __init__(self) -> None:
@@ -164,7 +169,7 @@ if __name__ == '__main__':
     m.printNext()
     time.sleep(2)
     
-    m2 = MMH.maze()
+    m2 = MKE.maze()
     m2.print()
     path = m2.find_path()
 
@@ -177,6 +182,114 @@ if __name__ == '__main__':
             m2.move_left()
         elif step == "right":
             m2.move_right()
-        m2.print()
+        m2.print()  
+        time.sleep(0.25)  
+    m2.printNext()
+    time.sleep(2)
+    
+    m3 = MPE.maze()
+    m3.print()
+    path = m3.find_path()
+
+    for step in path:
+        if step == "up":
+            m3.move_up()
+        elif step == "down":
+            m3.move_down()
+        elif step == "left":
+            m3.move_left()
+        elif step == "right":
+            m3.move_right()
+        m3.print()
+        time.sleep(0.25)
+    m3.printNext()
+    time.sleep(2)
+
+    #m4 = maze()
+    #m4.print()
+    #path = m4.find_path()
+
+    #for step in path:
+        #if step == "up":
+            #m4.move_up()
+        #elif step == "down":
+            #m4.move_down()
+        #elif step == "left":
+            #m4.move_left()
+        #elif step == "right":
+            #m4.move_right()
+        #m4.print()
+        #time.sleep(0.25)
+    #m4.printNext()
+    #time.sleep(2)
+
+    m5 = MKH.maze()
+    m5.print()
+    path = m5.find_path()
+
+    for step in path:
+        if step == "up":
+            m5.move_up()
+        elif step == "down":
+            m5.move_down()
+        elif step == "left":
+            m5.move_left()
+        elif step == "right":
+            m5.move_right()
+        m5.print()
+        time.sleep(0.25)
+    m5.printNext()
+    time.sleep(2)    
+    
+    m6 = MPH.maze()
+    m6.print()
+    path = m6.find_path()
+
+    for step in path:
+        if step == "up":
+            m6.move_up()
+        elif step == "down":
+            m6.move_down()
+        elif step == "left":
+            m6.move_left()
+        elif step == "right":
+            m6.move_right()
+        m6.print()
+        time.sleep(0.25)
+    m6.printNext()
+    time.sleep(2)  
+
+    #m7 = maze()
+    #m7.print()
+    #path = m7.find_path()
+
+    #for step in path:
+        #if step == "up":
+            #m7.move_up()
+        #elif step == "down":
+            #m7.move_down()
+        #elif step == "left":
+            #m7.move_left()
+        #elif step == "right":
+            #m7.move_right()
+        #m7.print()
+        #time.sleep(0.25)
+    #m7.printNext()
+    #time.sleep(2)
+    
+    m8 = MMH.maze()
+    m8.print()
+    path = m8.find_path()
+
+    for step in path:
+        if step == "up":
+            m8.move_up()
+        elif step == "down":
+            m8.move_down()
+        elif step == "left":
+            m8.move_left()
+        elif step == "right":
+            m8.move_right()
+        m8.print()
         time.sleep(0.25)
     m.printEND()
