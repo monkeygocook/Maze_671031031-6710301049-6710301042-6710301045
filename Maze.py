@@ -5,6 +5,8 @@ import MazeKhingEZ as MKE
 import MazeKhingHard as MKH
 import MazePunEZ as MPE
 import MazePunHard as MPH
+import MazeKaewEZ as MkE
+import MazeKaewHard as MkH
 
 
 class maze:
@@ -205,23 +207,23 @@ if __name__ == '__main__':
     m3.printNext()
     time.sleep(2)
 
-    #m4 = maze()
-    #m4.print()
-    #path = m4.find_path()
+    m4 = MkE.maze()
+    m4.print()
+    path = m4.find_path()
 
-    #for step in path:
-        #if step == "up":
-            #m4.move_up()
-        #elif step == "down":
-            #m4.move_down()
-        #elif step == "left":
-            #m4.move_left()
-        #elif step == "right":
-            #m4.move_right()
-        #m4.print()
-        #time.sleep(0.25)
-    #m4.printNext()
-    #time.sleep(2)
+    for step in path:
+        if step == "up":
+            m4.move_up()
+        elif step == "down":
+            m4.move_down()
+        elif step == "left":
+            m4.move_left()
+        elif step == "right":
+            m4.move_right()
+        m4.print()
+        time.sleep(0.25)
+    m4.printNext()
+    time.sleep(2)
 
     m5 = MKH.maze()
     m5.print()
@@ -259,23 +261,23 @@ if __name__ == '__main__':
     m6.printNext()
     time.sleep(2)  
 
-    #m7 = maze()
-    #m7.print()
-    #path = m7.find_path()
+    m7 = MkH.maze()
+    m7.print()
+    path = m7.find_path()
 
-    #for step in path:
-        #if step == "up":
-            #m7.move_up()
-        #elif step == "down":
-            #m7.move_down()
-        #elif step == "left":
-            #m7.move_left()
-        #elif step == "right":
-            #m7.move_right()
-        #m7.print()
-        #time.sleep(0.25)
-    #m7.printNext()
-    #time.sleep(2)
+    for step in path:
+        if step == "up":
+            m7.move_up()
+        elif step == "down":
+            m7.move_down()
+        elif step == "left":
+            m7.move_left()
+        elif step == "right":
+            m7.move_right()
+        m7.print()
+        time.sleep(0.25)
+    m7.printNext()
+    time.sleep(2)
     
     m8 = MMH.maze()
     m8.print()
