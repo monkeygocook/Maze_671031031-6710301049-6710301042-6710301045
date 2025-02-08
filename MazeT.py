@@ -8,9 +8,10 @@ Created on Fri Feb  7 08:47:58 2025
 # Completed maze program
 # Takes maze2.txt as input
 import turtle
+import time
 PART_OF_PATH = 'O'
 TRIED = '.'
-OBSTACLE = 'X'
+OBSTACLE = '+'
 DEAD_END = '-'
 class Maze:
     def __init__(self, maze_file_name):
@@ -39,7 +40,7 @@ class Maze:
         self.t = turtle.Turtle()
         self.t.shape('turtle')
         self.wn = turtle.Screen()
-        self.wn.setworldcoordinates(- (columns_in_maze - 1) / 2 - .5,- (rows_in_maze - 1) / 2 - .5,(columns_in_maze - 1) / 2 + .5,(rows_in_maze - 1) / 2 + .5)
+        self.wn.setworldcoordinates(- (columns_in_maze - 1) / 2 - 5,- (rows_in_maze - 1) / 2 - 5,(columns_in_maze - 1) / 2 + 5,(rows_in_maze - 1) / 2 + 5)
     
     def draw_maze(self):
         self.t.speed(10)
@@ -126,21 +127,95 @@ def search_from(maze, start_row, start_column):
         maze.update_position(start_row, start_column, DEAD_END)
     return found
 
+def next_level():
+    turtle.clearscreen()
+    turtle.bgcolor("white")
 
-def display_next_level():
-    turtle.reset()  # ล้างหน้าจอและรีเซ็ตเต่า
-    turtle.bgcolor("white")  # เปลี่ยนฉากหลังเป็นสีขาว
+    # แสดงข้อความ Next Level
     turtle.penup()
-    turtle.goto(0, 0)  # กำหนดตำแหน่งให้ข้อความอยู่ตรงกลาง
+    turtle.goto(0, 0)
     turtle.color("red")
-    turtle.write("Next Level", align="center", font=("Arial", 100, "bold"))
+    turtle.write("Next Level", align="center", font=("Arial", 50, "bold"))
     turtle.hideturtle()
 
+def End():
+    turtle.clearscreen()
+    turtle.bgcolor("white")
 
+    # แสดงข้อความ Next Level
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.color("red")
+    turtle.write("congratulations", align="center", font=("Arial", 50, "bold"))
+    turtle.hideturtle()
+
+def clear():
+    turtle.clearscreen()
+    turtle.bgcolor("white")
 
 if __name__ == "__main__":
     maze_1 = Maze('Map/maze.txt')
     maze_1.draw_maze()
     maze_1.update_position(maze_1.start_row, maze_1.start_col)
     search_from(maze_1, maze_1.start_row, maze_1.start_col)
-    display_next_level()
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_2 = Maze('Map/maze2.txt')
+    maze_2.draw_maze()
+    maze_2.update_position(maze_2.start_row, maze_2.start_col)
+    search_from(maze_2, maze_2.start_row, maze_2.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_3 = Maze('Map/maze3.txt')
+    maze_3.draw_maze()
+    maze_3.update_position(maze_3.start_row, maze_3.start_col)
+    search_from(maze_3, maze_3.start_row, maze_3.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_4 = Maze('Map/maze4.txt')
+    maze_4.draw_maze()
+    maze_4.update_position(maze_4.start_row, maze_4.start_col)
+    search_from(maze_4, maze_4.start_row, maze_4.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+    
+    maze_5 = Maze('Map/maze5.txt')
+    maze_5.draw_maze()
+    maze_5.update_position(maze_5.start_row, maze_5.start_col)
+    search_from(maze_5, maze_5.start_row, maze_5.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_6 = Maze('Map/maze6.txt')
+    maze_6.draw_maze()
+    maze_6.update_position(maze_6.start_row, maze_6.start_col)
+    search_from(maze_6, maze_6.start_row, maze_6.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_7 = Maze('Map/maze7.txt')
+    maze_7.draw_maze()
+    maze_7.update_position(maze_7.start_row, maze_7.start_col)
+    search_from(maze_7, maze_7.start_row, maze_7.start_col)
+    next_level()
+    time.sleep(2)
+    clear()
+
+    maze_8 = Maze('Map/maze8.txt')
+    maze_8.draw_maze()
+    maze_8.update_position(maze_8.start_row, maze_8.start_col)
+    search_from(maze_8, maze_8.start_row, maze_8.start_col)
+    End()
+
+
+
+    

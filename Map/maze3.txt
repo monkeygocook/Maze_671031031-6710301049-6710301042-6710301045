@@ -1,26 +1,26 @@
-XXXXXXX
-X XXXXX
-X   XXX
-X X  XX
-X XX  X
-X  XXXX
-XX   XX
-XX X  X
-XXXX XX
-X    XX
-XX X  X
-X  XXXX
-X XXXXX
-X     X
-XXXXX X
-X     X
-X XXXXX
-X X X X
-X     X
-XXXXX X
-X X X X
-X     X
-XXX XXX
-X X X X
-XS    X
-XXXXXXX
++ +++++ 
++ +++++ 
++   +++ 
++ +  ++ 
++ ++  + 
++  ++++ 
+++   ++ 
+++ +  + 
+++++ ++ 
++    ++ 
+++ +  + 
++  ++++ 
++ +++++ 
++     + 
++++++ + 
++     + 
++ +++++ 
++ + + + 
++     + 
++++++ + 
++ + + + 
++     + 
++++ +++ 
++ + + + 
++S    + 
++++++++ 

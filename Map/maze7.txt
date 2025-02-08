@@ -1,24 +1,24 @@
-XXXXXXXxXxXXXX
-X   X X X X  X
-X XxX      X X
-X X X XXXXxX X
-X X   X X    X
-X X X X XXX XX
-X X XxX  X   X
-X   X X X    X
-X X X   X x XX
-XSX X X X x  X
-X X   X   XX X
-XxXXXxXXX  X X
-X X X X X XXXX
-X   X X X X  X
-X XxX      X X
-X X X XXXXxX X
-X X   X X    X
-X X X X XXX XX
-X X XxX  X   X
-X   X X X    X
-X X X   X x XX
-X X X X X x  X
-X X   X   XX X
-XxXXXxXXXXXXxX
+++++++++++++++ 
++   + + + +  + 
++ +++      + + 
++ + + ++++++ + 
++ +   + +    + 
++ + + + +++ ++ 
++ + +++  +   + 
++   + + +    + 
++ + +   + + ++ 
++S+ + + + +  + 
++ +   +   ++ + 
++++++++++  + + 
++ + + + + ++++ 
++   + + + +  + 
++ +++      + + 
++ + + ++++++ + 
++ +   + +    + 
++ + + + +++ ++ 
++ + +++  +   + 
++   + + +    + 
++ + +   + + ++ 
++ + + + + +  + 
++ +   +   ++   
+++++++++++++++ 
