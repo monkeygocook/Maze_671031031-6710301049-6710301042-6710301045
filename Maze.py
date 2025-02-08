@@ -1,12 +1,13 @@
 import os
 import time
-import MazeMechHard as MMH
-import MazeKhingEZ as MKE
-import MazeKhingHard as MKH
-import MazePunEZ as MPE
-import MazePunHard as MPH
-import MazeKaewEZ as MkE
-import MazeKaewHard as MkH
+
+from Map_O import MazeMechHard as MMH
+from Map_O import MazeKhingEZ as MKE
+from Map_O import MazeKhingHard as MKH
+from Map_O import MazePunEZ as MPE
+from Map_O import MazePunHard as MPH
+from Map_O import MazeKaewEZ as MkE
+from Map_O import MazeKaewHard as MkH
 
 
 class maze:
