@@ -154,7 +154,7 @@ def clear():
     turtle.bgcolor("white")
 
 if __name__ == "__main__":
-    maze_1 = Maze('Map/maze.txt')
+    maze_1 = Maze('Map_T/maze.txt')
     maze_1.draw_maze()
     maze_1.update_position(maze_1.start_row, maze_1.start_col)
     search_from(maze_1, maze_1.start_row, maze_1.start_col)
@@ -162,7 +162,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_2 = Maze('Map/maze2.txt')
+    maze_2 = Maze('Map_T/maze2.txt')
     maze_2.draw_maze()
     maze_2.update_position(maze_2.start_row, maze_2.start_col)
     search_from(maze_2, maze_2.start_row, maze_2.start_col)
@@ -170,7 +170,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_3 = Maze('Map/maze3.txt')
+    maze_3 = Maze('Map_T/maze3.txt')
     maze_3.draw_maze()
     maze_3.update_position(maze_3.start_row, maze_3.start_col)
     search_from(maze_3, maze_3.start_row, maze_3.start_col)
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_4 = Maze('Map/maze4.txt')
+    maze_4 = Maze('Map_T/maze4.txt')
     maze_4.draw_maze()
     maze_4.update_position(maze_4.start_row, maze_4.start_col)
     search_from(maze_4, maze_4.start_row, maze_4.start_col)
@@ -186,7 +186,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
     
-    maze_5 = Maze('Map/maze5.txt')
+    maze_5 = Maze('Map_T/maze5.txt')
     maze_5.draw_maze()
     maze_5.update_position(maze_5.start_row, maze_5.start_col)
     search_from(maze_5, maze_5.start_row, maze_5.start_col)
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_6 = Maze('Map/maze6.txt')
+    maze_6 = Maze('Map_T/maze6.txt')
     maze_6.draw_maze()
     maze_6.update_position(maze_6.start_row, maze_6.start_col)
     search_from(maze_6, maze_6.start_row, maze_6.start_col)
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_7 = Maze('Map/maze7.txt')
+    maze_7 = Maze('Map_T/maze7.txt')
     maze_7.draw_maze()
     maze_7.update_position(maze_7.start_row, maze_7.start_col)
     search_from(maze_7, maze_7.start_row, maze_7.start_col)
@@ -210,7 +210,7 @@ if __name__ == "__main__":
     time.sleep(2)
     clear()
 
-    maze_8 = Maze('Map/maze8.txt')
+    maze_8 = Maze('Map_T/maze8.txt')
     maze_8.draw_maze()
     maze_8.update_position(maze_8.start_row, maze_8.start_col)
     search_from(maze_8, maze_8.start_row, maze_8.start_col)
